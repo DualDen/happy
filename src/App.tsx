@@ -21,7 +21,7 @@ const App = () => {
             {/* Заголовок */}
             <svg viewBox="0 0 1000 200" style={styles.svg}>
                 <text
-                    fontSize={90}
+                    fontSize={120}
                     x="50%"
                     y="50%"
                     textAnchor="middle"
@@ -85,16 +85,6 @@ const App = () => {
                                     />
                                 )}
 
-                                {/* Узорные элементы — виньетки */}
-                                {fillCard && (
-                                    <>
-                                        <image href="/vine.svg" x="-10" y="-10" width="100" height="100" />
-                                        <image href="/vine.svg" x="305" y="-10" width="100" height="100" transform="scale(-1,1) translate(-393, 0)" />
-                                        <image href="/vine.svg" x="-10" y="290" width="100" height="100" transform="scale(1,-1) translate(0, -380)" />
-                                        <image href="/vine.svg" x="305" y="290" width="100" height="100" transform="scale(-1,-1) translate(-393, -380)" />
-                                    </>
-                                )}
-
                                 <defs>
                                     <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" stopColor="#fff" />
@@ -114,7 +104,7 @@ const App = () => {
                                         inset: 12,
                                         padding: 10,
                                         fontFamily: 'Great Vibes, serif',
-                                        fontSize: 22,
+                                        fontSize: 25,
                                         color: '#000',
                                         lineHeight: 1.4,
                                         overflowY: 'auto',
