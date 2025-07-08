@@ -10,12 +10,17 @@ const App = () => {
     const [fillCard, setFillCard] = useState(false);
 
     useEffect(() => {
-        audioRef.current?.play().catch(() => {});
+        const originalStyle = window.getComputedStyle(document.body).overflow;
+        document.body.style.overflow = 'hidden';
+        return () => {
+            document.body.style.overflow = originalStyle;
+        };
     }, []);
+
 
     return (
         <div style={styles.container}>
-            <audio ref={audioRef} src="/party-horn.mp3" preload="auto" />
+            <audio ref={audioRef} src="/party-horn.mp3" autoPlay={true} preload="auto" />
             <Confetti width={width} height={height} numberOfPieces={200} recycle />
 
             {/* Заголовок */}
