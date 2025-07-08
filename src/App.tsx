@@ -20,7 +20,7 @@ const App = () => {
 
             {/* Заголовок */}
             <svg viewBox="0 0 1000 200" style={styles.svg}>
-                <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" className="birthday-text">
+                <text fontSize={72} x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" className="birthday-text">
                     С Днём Рождения!
                 </text>
             </svg>
@@ -122,7 +122,7 @@ const App = () => {
                 {`
           .birthday-text {
             font-family: 'Great Vibes', cursive;
-            font-size: 60px;
+            font-size: 120px;
             fill: none;
             stroke: #fff;
             stroke-width: 2;
