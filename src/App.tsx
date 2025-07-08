@@ -53,13 +53,13 @@ const App = () => {
             <AnimatePresence>
                 {showCard && (
                     <div style={{ marginTop: 40 }}>
-                        <div style={{ position: 'relative', width: 393, height: 380 }}>
-                            <svg width="393" height="380" viewBox="0 0 393 380" style={{ position: 'absolute', top: 0, left: 0 }}>
+                        <div style={{ position: 'relative', width: 390, height: 380 }}>
+                            <svg width="390" height="380" viewBox="0 0 390 380" style={{ position: 'absolute', top: 0, left: 0 }}>
                                 {/* Основной контур */}
                                 <motion.rect
                                     x="0"
                                     y="0"
-                                    width="393"
+                                    width="390"
                                     height="380"
                                     rx="32"
                                     ry="32"
@@ -79,7 +79,7 @@ const App = () => {
                                     <motion.rect
                                         x="0"
                                         y="0"
-                                        width="393"
+                                        width="390"
                                         height="380"
                                         rx="24"
                                         ry="24"
