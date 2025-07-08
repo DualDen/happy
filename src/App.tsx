@@ -162,6 +162,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
+        overflowY: "hidden"
     },
     svg: {
         width: '100%',
