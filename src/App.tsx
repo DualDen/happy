@@ -20,7 +20,7 @@ const App = () => {
 
     return (
         <div style={styles.container}>
-            <audio ref={audioRef} src="/party-horn.mp3" autoPlay={true} preload="auto" />
+            <audio ref={audioRef} src="/party-horn.mp3" preload="auto" />
             <Confetti width={width} height={height} numberOfPieces={200} recycle />
 
             {/* Заголовок */}
@@ -43,7 +43,10 @@ const App = () => {
                     style={styles.button}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => setShowCard(true)}
+                    onClick={() => {
+                        setShowCard(true)
+                        audioRef?.current?.play();
+                    }}
                 >
                     Нажми меня
                 </motion.button>
