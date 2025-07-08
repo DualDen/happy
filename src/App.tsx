@@ -20,7 +20,14 @@ const App = () => {
 
             {/* Заголовок */}
             <svg viewBox="0 0 1000 200" style={styles.svg}>
-                <text fontSize={72} x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" className="birthday-text">
+                <text
+                    fontSize={90}
+                    x="50%"
+                    y="50%"
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="birthday-text"
+                >
                     С Днём Рождения!
                 </text>
             </svg>
@@ -37,55 +44,66 @@ const App = () => {
                 </motion.button>
             )}
 
-            {/* Карточка с анимацией рисования границы */}
+            {/* Карточка */}
             <AnimatePresence>
                 {showCard && (
-                    <div style={{marginTop: 40}}>
-                        <div style={{position: 'relative', width: 393, height: 500}}>
-                            <svg width="393" height="500" viewBox="0 0 393 500"
-                                 style={{position: 'absolute', top: 0, left: 0}}>
+                    <div style={{ marginTop: 40 }}>
+                        <div style={{ position: 'relative', width: 393, height: 380 }}>
+                            <svg width="393" height="380" viewBox="0 0 393 380" style={{ position: 'absolute', top: 0, left: 0 }}>
+                                {/* Основной контур */}
                                 <motion.rect
                                     x="0"
                                     y="0"
                                     width="393"
-                                    height="500"
+                                    height="380"
                                     rx="32"
                                     ry="32"
                                     stroke="#fff"
                                     strokeWidth="3"
                                     fill="transparent"
-                                    strokeDasharray="1786"
-                                    strokeDashoffset="1786"
-                                    initial={{strokeDashoffset: 1786}}
-                                    animate={{strokeDashoffset: 0}}
-                                    transition={{
-                                        duration: 2.5,
-                                        ease: 'easeInOut',
-                                    }}
+                                    strokeDasharray="1546"
+                                    strokeDashoffset="1546"
+                                    initial={{ strokeDashoffset: 1546 }}
+                                    animate={{ strokeDashoffset: 0 }}
+                                    transition={{ duration: 2.5, ease: 'easeInOut' }}
                                     onAnimationComplete={() => setFillCard(true)}
                                 />
+
+                                {/* Заливка */}
                                 {fillCard && (
                                     <motion.rect
                                         x="0"
                                         y="0"
                                         width="393"
-                                        height="500"
+                                        height="380"
                                         rx="24"
                                         ry="24"
                                         fill="url(#grad)"
-                                        initial={{opacity: 0}}
-                                        animate={{opacity: 1}}
-                                        transition={{duration: 1.2}}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 1.2 }}
                                     />
                                 )}
+
+                                {/* Узорные элементы — виньетки */}
+                                {fillCard && (
+                                    <>
+                                        <image href="/vine.svg" x="-10" y="-10" width="100" height="100" />
+                                        <image href="/vine.svg" x="305" y="-10" width="100" height="100" transform="scale(-1,1) translate(-393, 0)" />
+                                        <image href="/vine.svg" x="-10" y="290" width="100" height="100" transform="scale(1,-1) translate(0, -380)" />
+                                        <image href="/vine.svg" x="305" y="290" width="100" height="100" transform="scale(-1,-1) translate(-393, -380)" />
+                                    </>
+                                )}
+
                                 <defs>
                                     <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stopColor="#fff"/>
-                                        <stop offset="100%" stopColor="#ffe0eb"/>
+                                        <stop offset="0%" stopColor="#fff" />
+                                        <stop offset="100%" stopColor="#ffe0eb" />
                                     </linearGradient>
                                 </defs>
                             </svg>
 
+                            {/* Текст */}
                             {fillCard && (
                                 <motion.div
                                     initial={{ opacity: 0, y: 10 }}
@@ -96,20 +114,17 @@ const App = () => {
                                         inset: 12,
                                         padding: 10,
                                         fontFamily: 'Great Vibes, serif',
-                                        fontSize: 24,
+                                        fontSize: 22,
                                         color: '#000',
                                         lineHeight: 1.4,
                                         overflowY: 'auto',
                                         textAlign: 'center',
                                     }}
                                 >
-                                    Солнышко, поздравляю тебя с днем рождения, на самом деле невозможно выразить словами
-                                    то насколько
-                                    сильно я тебя люблю, я бесконечно рад и счастлив что встретил тебя и надеюсь, что
-                                    нас с тобой ждут
-                                    очень долгие и счастливые годы вместе. Желаю тебе здоровья, добиться всего чего бы
-                                    ты только не
-                                    захотела — я всегда буду рядом и буду поддерживать тебя. Я тебя очень люблю!
+                                    Солнышко, поздравляю тебя с днём рождения! На самом деле невозможно выразить словами,
+                                    насколько сильно я тебя люблю. Я бесконечно рад и счастлив, что встретил тебя, и надеюсь,
+                                    что нас с тобой ждут долгие и счастливые годы вместе. Желаю тебе здоровья, достижения всех
+                                    мечт и целей. Я всегда буду рядом и поддержу тебя в любом начинании. Я тебя очень люблю!
                                 </motion.div>
                             )}
                         </div>
@@ -122,7 +137,6 @@ const App = () => {
                 {`
           .birthday-text {
             font-family: 'Great Vibes', cursive;
-            font-size: 120px;
             fill: none;
             stroke: #fff;
             stroke-width: 2;
@@ -160,8 +174,8 @@ const styles: { [key: string]: React.CSSProperties } = {
         padding: 20,
     },
     svg: {
-        width: '90%',
-        height: '150px',
+        width: '100%',
+        height: '160px',
         marginBottom: 20,
     },
     button: {
